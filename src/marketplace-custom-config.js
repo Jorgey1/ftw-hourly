@@ -17,9 +17,9 @@ export const experienceTypes = [
 
 export const certificate = [
   { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
-  { key: 'easy', label: 'This experience is registered as difficulty easy' },
-  { key: 'medium', label: 'This experience is registered as difficulty medium' },
-  { key: 'hard', label: 'This experience is registered as difficulty hard' },
+  { key: 'easy', label: 'Easy' },
+  { key: 'medium', label: 'Medium' },
+  { key: 'hard', label: 'Hard' },
 ];
 
 // Price filter configuration
