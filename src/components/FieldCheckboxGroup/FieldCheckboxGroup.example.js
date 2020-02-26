@@ -8,30 +8,34 @@ import { requiredFieldArrayCheckbox } from '../../util/validators';
 const formName = 'Styleguide.FieldCheckboxGroup';
 const formNameRequired = 'Styleguide.FieldCheckboxGroupRequired';
 
-const label = <h3>Yoga styles</h3>;
+const label = <h3>Experience types</h3>;
 
 const commonProps = {
   label: label,
   options: [
-    { key: 'ashtanga', label: 'Ashtanga' },
-    { key: 'hatha', label: 'Hatha' },
-    { key: 'kundalini', label: 'Kundalini' },
-    { key: 'restorative', label: 'Restorative' },
-    { key: 'vinyasa', label: 'Vinyasa' },
-    { key: 'yin', label: 'yin' },
+    { key: 'climbing', label: 'Climbing' },
+    { key: 'kayaking', label: 'Kayaking' },
+    { key: 'canoeing', label: 'Canoeing' },
+    { key: 'hiking', label: 'Hiking' },
+    { key: 'motorbiking', label: 'Motorbiking' },
+    { key: 'sailing', label: 'Sailing' },
+    { key: 'flying', label: 'Flying' },
+    { key: 'swimming', label: 'Swimming' },
+    { key: 'horseriding', label: 'Horse Riding' },
+    { key: 'sea safari', label: 'Sea Safari' },
   ],
   twoColumns: true,
 };
 
 const optionalProps = {
-  name: 'yogaStyles-optional',
-  id: 'yogaStyles-optional',
+  name: 'experienceTypes-optional',
+  id: 'experienceTypes-optional',
   ...commonProps,
 };
 
 const requiredProps = {
-  name: 'yogaStyles-required',
-  id: `${formNameRequired}.yogaStyles-required`,
+  name: 'experienceTypes-required',
+  id: `${formNameRequired}.experienceTypes-required`,
   ...commonProps,
   validate: requiredFieldArrayCheckbox('this is required'),
 };

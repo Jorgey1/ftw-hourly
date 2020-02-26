@@ -159,7 +159,7 @@ class SearchFiltersMobileComponent extends Component {
       onManageDisableScrolling,
       selectedFiltersCount,
       certificateFilter,
-      yogaStylesFilter,
+      experienceTypesFilter,
       priceFilter,
       keywordFilter,
       intl,
@@ -202,20 +202,20 @@ class SearchFiltersMobileComponent extends Component {
       />
     ) : null;
 
-    const yogaStylesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.yogaStylesLabel' });
+    const experienceTypesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.experienceTypesLabel' });
 
-    const initialyogaStyles = this.initialValues(yogaStylesFilter.paramName);
+    const initialexperienceTypes = this.initialValues(experienceTypesFilter.paramName);
 
-    const yogaStylesFilterElement = yogaStylesFilter ? (
+    const experienceTypesFilterElement = experienceTypesFilter ? (
       <SelectMultipleFilter
-        id="SearchFiltersMobile.yogaStylesFilter"
-        name="yogaStyles"
-        urlParam={yogaStylesFilter.paramName}
-        label={yogaStylesLabel}
+        id="SearchFiltersMobile.experienceTypesFilter"
+        name="experienceTypes"
+        urlParam={experienceTypesFilter.paramName}
+        label={experienceTypesLabel}
         onSubmit={this.handleSelectMultiple}
         liveEdit
-        options={yogaStylesFilter.options}
-        initialValues={initialyogaStyles}
+        options={experienceTypesFilter.options}
+        initialValues={initialexperienceTypes}
       />
     ) : null;
 
@@ -283,7 +283,7 @@ class SearchFiltersMobileComponent extends Component {
           {this.state.isFiltersOpenOnMobile ? (
             <div className={css.filtersWrapper}>
               {keywordFilterElement}
-              {yogaStylesFilterElement}
+              {experienceTypesFilterElement}
               {certificateFilterElement}
               {priceFilterElement}
             </div>
@@ -308,7 +308,7 @@ SearchFiltersMobileComponent.defaultProps = {
   selectedFiltersCount: 0,
   filterParamNames: [],
   certificateFilter: null,
-  yogaStylesFilter: null,
+  experienceTypesFilter: null,
   priceFilter: null,
 };
 
@@ -327,7 +327,7 @@ SearchFiltersMobileComponent.propTypes = {
   selectedFiltersCount: number,
   filterParamNames: array,
   certificateFilter: propTypes.filterConfig,
-  yogaStylesFilter: propTypes.filterConfig,
+  experienceTypesFilter: propTypes.filterConfig,
   priceFilter: propTypes.filterConfig,
 
   // from injectIntl

@@ -67,7 +67,7 @@ exports[`SearchPageComponent matches snapshot 1`] = `
             },
             "paramName": "price",
           },
-          "yogaStylesFilter": Object {
+          "experienceTypesFilter": Object {
             "options": Array [
               Object {
                 "key": "ashtanga",
@@ -94,7 +94,7 @@ exports[`SearchPageComponent matches snapshot 1`] = `
                 "label": "Yin",
               },
             ],
-            "paramName": "pub_yogaStyles",
+            "paramName": "pub_experienceTypes",
           },
         }
       }

@@ -54,12 +54,12 @@ export class SearchPageComponent extends Component {
   filters() {
     const {
       certificateConfig,
-      yogaStylesConfig,
+      experienceTypesConfig,
       priceFilterConfig,
       keywordFilterConfig,
     } = this.props;
 
-    // Note: "certificate" and "yogaStyles" filters are not actually filtering anything by default.
+    // Note: "certificate" and "experienceTypes" filters are not actually filtering anything by default.
     // Currently, if you want to use them, we need to manually configure them to be available
     // for search queries. Read more from extended data document:
     // https://www.sharetribe.com/docs/references/extended-data/#data-schema
@@ -69,9 +69,9 @@ export class SearchPageComponent extends Component {
         paramName: 'pub_certificate',
         options: certificateConfig.filter(c => !c.hideFromFilters),
       },
-      yogaStylesFilter: {
-        paramName: 'pub_yogaStyles',
-        options: yogaStylesConfig,
+      experienceTypesFilter: {
+        paramName: 'pub_experienceTypes',
+        options: experienceTypesConfig,
       },
       priceFilter: {
         paramName: 'price',
@@ -221,7 +221,7 @@ export class SearchPageComponent extends Component {
             searchParamsForPagination={parse(location.search)}
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             primaryFilters={{
-              yogaStylesFilter: filters.yogaStylesFilter,
+              experienceTypesFilter: filters.experienceTypesFilter,
               certificateFilter: filters.certificateFilter,
               priceFilter: filters.priceFilter,
               keywordFilter: filters.keywordFilter,
@@ -269,7 +269,7 @@ SearchPageComponent.defaultProps = {
   searchParams: {},
   tab: 'listings',
   certificateConfig: config.custom.certificate,
-  yogaStylesConfig: config.custom.yogaStyles,
+  experienceTypesConfig: config.custom.experienceTypes,
   priceFilterConfig: config.custom.priceFilterConfig,
   keywordFilterConfig: config.custom.keywordFilterConfig,
   activeListingId: null,
@@ -288,7 +288,7 @@ SearchPageComponent.propTypes = {
   searchParams: object,
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
   certificateConfig: array,
-  yogaStylesConfig: array,
+  experienceTypesConfig: array,
   priceFilterConfig: shape({
     min: number.isRequired,
     max: number.isRequired,

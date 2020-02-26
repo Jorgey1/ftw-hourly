@@ -2,19 +2,24 @@
  * Marketplace specific configuration.
  */
 
-export const yogaStyles = [
-  { key: 'ashtanga', label: 'Ashtanga' },
-  { key: 'hatha', label: 'Hatha' },
-  { key: 'kundalini', label: 'Kundalini' },
-  { key: 'restorative', label: 'Restorative' },
-  { key: 'vinyasa', label: 'Vinyasa' },
-  { key: 'yin', label: 'Yin' },
+export const experienceTypes = [
+  { key: 'climbing', label: 'Climbing' },
+  { key: 'kayaking', label: 'Kayaking' },
+  { key: 'canoeing', label: 'Canoeing' },
+  { key: 'hiking', label: 'Hiking' },
+  { key: 'motorbiking', label: 'Motorbiking' },
+  { key: 'sailing', label: 'Sailing' },
+  { key: 'flying', label: 'Flying' },
+  { key: 'swimming', label: 'Swimming' },
+  { key: 'horseriding', label: 'Horse Riding' },
+  { key: 'sea safari', label: 'Sea Safari' },
 ];
 
 export const certificate = [
   { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
-  { key: '200h', label: 'Registered yoga teacher 200h' },
-  { key: '500h', label: 'Registered yoga teacher 500h' },
+  { key: 'easy', label: 'This experience is registered as difficulty easy' },
+  { key: 'medium', label: 'This experience is registered as difficulty medium' },
+  { key: 'hard', label: 'This experience is registered as difficulty hard' },
 ];
 
 // Price filter configuration

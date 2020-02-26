@@ -7,7 +7,7 @@ import {
 
 const urlParams = {
   pub_certificate: '200h',
-  pub_yogaStyles: 'vinyasa,yin',
+  pub_experienceTypes: 'vinyasa,yin',
 };
 
 const filters = {
@@ -15,8 +15,8 @@ const filters = {
     paramName: 'pub_certificate',
     options: [{ key: '200h' }, { key: '500h' }],
   },
-  yogaStylesFilter: {
-    paramName: 'pub_yogaStyles',
+  experienceTypesFilter: {
+    paramName: 'pub_experienceTypes',
     options: [{ key: 'vinyasa' }, { key: 'yin' }],
   },
 };
@@ -56,7 +56,7 @@ describe('SearchPage.helpers', () => {
     });
 
     it('drops an invalid filter param value', () => {
-      const params = { pub_certificate: '200h', pub_yogaStyles: 'invalid1,invalid2' };
+      const params = { pub_certificate: '200h', pub_experienceTypes: 'invalid1,invalid2' };
       const validParams = validFilterParams(params, filters);
       expect(validParams).toEqual({ pub_certificate: '200h' });
     });
@@ -80,7 +80,7 @@ describe('SearchPage.helpers', () => {
     });
 
     it('drops an invalid filter param value', () => {
-      const params = { pub_certificate: '200h', pub_yogaStyles: 'invalid1,invalid2' };
+      const params = { pub_certificate: '200h', pub_experienceTypes: 'invalid1,invalid2' };
       const validParams = validURLParamsForExtendedData(params, filters);
       expect(validParams).toEqual({ pub_certificate: '200h' });
     });
@@ -109,7 +109,7 @@ describe('SearchPage.helpers', () => {
     });
 
     it('drops an invalid filter param value', () => {
-      const params = { pub_certificate: '200h', pub_yogaStyles: 'invalid1,invalid2' };
+      const params = { pub_certificate: '200h', pub_experienceTypes: 'invalid1,invalid2' };
       const validParams = pickSearchParamsOnly(params, filters);
       expect(validParams).toEqual({ pub_certificate: '200h' });
     });

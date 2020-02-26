@@ -192,7 +192,7 @@ export class ListingPageComponent extends Component {
       sendEnquiryError,
       monthlyTimeSlots,
       certificateConfig,
-      yogaStylesConfig,
+      experienceTypesConfig,
     } = this.props;
 
     const listingId = new UUID(rawParams.id);
@@ -421,7 +421,7 @@ export class ListingPageComponent extends Component {
                     onContactUser={this.onContactUser}
                   />
                   <SectionDescriptionMaybe description={description} />
-                  <SectionFeaturesMaybe options={yogaStylesConfig} publicData={publicData} />
+                  <SectionFeaturesMaybe options={experienceTypesConfig} publicData={publicData} />
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
@@ -480,7 +480,7 @@ ListingPageComponent.defaultProps = {
   monthlyTimeSlots: null,
   sendEnquiryError: null,
   certificateConfig: config.custom.certificate,
-  yogaStylesConfig: config.custom.yogaStyles,
+  experienceTypesConfig: config.custom.experienceTypes,
 };
 
 ListingPageComponent.propTypes = {
@@ -528,7 +528,7 @@ ListingPageComponent.propTypes = {
   onInitializeCardPaymentData: func.isRequired,
 
   certificateConfig: array,
-  yogaStylesConfig: array,
+  experienceTypesConfig: array,
 };
 
 const mapStateToProps = state => {

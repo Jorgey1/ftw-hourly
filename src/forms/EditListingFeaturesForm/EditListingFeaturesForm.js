@@ -57,7 +57,7 @@ const EditListingFeaturesFormComponent = props => (
             className={css.features}
             id={name}
             name={name}
-            options={config.custom.yogaStyles}
+            options={config.custom.experienceTypes}
           />
 
           <Button

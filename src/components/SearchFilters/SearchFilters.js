@@ -52,7 +52,7 @@ const SearchFiltersComponent = props => {
     resultsCount,
     searchInProgress,
     certificateFilter,
-    yogaStylesFilter,
+    experienceTypesFilter,
     priceFilter,
     keywordFilter,
     isSearchFiltersPanelOpen,
@@ -69,16 +69,16 @@ const SearchFiltersComponent = props => {
     id: 'SearchFilters.certificateLabel',
   });
 
-  const yogaStylesLabel = intl.formatMessage({
-    id: 'SearchFilters.yogaStylesLabel',
+  const experienceTypesLabel = intl.formatMessage({
+    id: 'SearchFilters.experienceTypesLabel',
   });
 
   const keywordLabel = intl.formatMessage({
     id: 'SearchFilters.keywordLabel',
   });
 
-  const initialyogaStyles = yogaStylesFilter
-    ? initialValues(urlQueryParams, yogaStylesFilter.paramName)
+  const initialexperienceTypes = experienceTypesFilter
+    ? initialValues(urlQueryParams, experienceTypesFilter.paramName)
     : null;
 
   const initialcertificate = certificateFilter
@@ -142,16 +142,16 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-  const yogaStylesFilterElement = yogaStylesFilter ? (
+  const experienceTypesFilterElement = experienceTypesFilter ? (
     <SelectMultipleFilter
-      id={'SearchFilters.yogaStylesFilter'}
-      name="yogaStyles"
-      urlParam={yogaStylesFilter.paramName}
-      label={yogaStylesLabel}
+      id={'SearchFilters.experienceTypesFilter'}
+      name="experienceTypes"
+      urlParam={experienceTypesFilter.paramName}
+      label={experienceTypesLabel}
       onSubmit={handleSelectOptions}
       showAsPopup
-      options={yogaStylesFilter.options}
-      initialValues={initialyogaStyles}
+      options={experienceTypesFilter.options}
+      initialValues={initialexperienceTypes}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
   ) : null;
@@ -202,7 +202,7 @@ const SearchFiltersComponent = props => {
   return (
     <div className={classes}>
       <div className={css.filters}>
-        {yogaStylesFilterElement}
+        {experienceTypesFilterElement}
         {certificateFilterElement}
         {priceFilterElement}
         {keywordFilterElement}
@@ -238,7 +238,7 @@ SearchFiltersComponent.defaultProps = {
   resultsCount: null,
   searchingInProgress: false,
   certificateFilter: null,
-  yogaStylesFilter: null,
+  experienceTypesFilter: null,
   priceFilter: null,
   isSearchFiltersPanelOpen: false,
   toggleSearchFiltersPanel: null,
@@ -254,7 +254,7 @@ SearchFiltersComponent.propTypes = {
   searchingInProgress: bool,
   onManageDisableScrolling: func.isRequired,
   certificateFilter: propTypes.filterConfig,
-  yogaStylesFilter: propTypes.filterConfig,
+  experienceTypesFilter: propTypes.filterConfig,
   priceFilter: propTypes.filterConfig,
   isSearchFiltersPanelOpen: bool,
   toggleSearchFiltersPanel: func,

@@ -3,15 +3,19 @@ import { withRouter } from 'react-router-dom';
 import SelectMultipleFilter from './SelectMultipleFilter';
 import { stringify, parse } from '../../util/urlHelpers';
 
-const URL_PARAM = 'pub_yogaStyles';
+const URL_PARAM = 'pub_experienceTypes';
 
 const options = [
-  { key: 'ashtanga', label: 'Ashtanga' },
-  { key: 'hatha', label: 'Hatha' },
-  { key: 'kundalini', label: 'Kundalini' },
-  { key: 'restorative', label: 'Restorative' },
-  { key: 'vinyasa', label: 'Vinyasa' },
-  { key: 'yin', label: 'yin' },
+  { key: 'climbing', label: 'Climbing' },
+  { key: 'kayaking', label: 'Kayaking' },
+  { key: 'canoeing', label: 'Canoeing' },
+  { key: 'hiking', label: 'Hiking' },
+  { key: 'motorbiking', label: 'Motorbiking' },
+  { key: 'sailing', label: 'Sailing' },
+  { key: 'flying', label: 'Flying' },
+  { key: 'swimming', label: 'Swimming' },
+  { key: 'horseriding', label: 'Horse Riding' },
+  { key: 'sea safari', label: 'Sea Safari' },
 ];
 
 const handleSubmit = (urlParam, values, history) => {
@@ -20,19 +24,19 @@ const handleSubmit = (urlParam, values, history) => {
   history.push(`${window.location.pathname}${queryParams}`);
 };
 
-const YogaStylesFilterPopup = withRouter(props => {
+const ExperienceTypesFilterPopup = withRouter(props => {
   const { history, location } = props;
 
   const params = parse(location.search);
-  const yogaStyles = params[URL_PARAM];
-  const initialValues = !!yogaStyles ? yogaStyles.split(',') : [];
+  const experienceTypes = params[URL_PARAM];
+  const initialValues = !!experienceTypes ? experienceTypes.split(',') : [];
 
   return (
     <SelectMultipleFilter
       id="SelectMultipleFilterPopupExample"
-      name="yogaStyles"
+      name="experienceTypes"
       urlParam={URL_PARAM}
-      label="yogaStyles"
+      label="experienceTypes"
       onSubmit={(urlParam, values) => handleSubmit(urlParam, values, history)}
       showAsPopup={true}
       liveEdit={false}
@@ -43,25 +47,25 @@ const YogaStylesFilterPopup = withRouter(props => {
   );
 });
 
-export const YogaStylesFilterPopupExample = {
-  component: YogaStylesFilterPopup,
+export const ExperienceTypesFilterPopupExample = {
+  component: ExperienceTypesFilterPopup,
   props: {},
   group: 'filters',
 };
 
-const YogaStylesFilterPlain = withRouter(props => {
+const ExperienceTypesFilterPlain = withRouter(props => {
   const { history, location } = props;
 
   const params = parse(location.search);
-  const yogaStyles = params[URL_PARAM];
-  const initialValues = !!yogaStyles ? yogaStyles.split(',') : [];
+  const experienceTypes = params[URL_PARAM];
+  const initialValues = !!experienceTypes ? experienceTypes.split(',') : [];
 
   return (
     <SelectMultipleFilter
       id="SelectMultipleFilterPlainExample"
-      name="yogaStyles"
+      name="experienceTypes"
       urlParam={URL_PARAM}
-      label="yogaStyles"
+      label="experienceTypes"
       onSubmit={(urlParam, values) => {
         handleSubmit(urlParam, values, history);
       }}
@@ -73,8 +77,8 @@ const YogaStylesFilterPlain = withRouter(props => {
   );
 });
 
-export const YogaStylesFilterPlainExample = {
-  component: YogaStylesFilterPlain,
+export const ExperienceTypesFilterPlainExample = {
+  component: ExperienceTypesFilterPlain,
   props: {},
   group: 'filters',
 };
